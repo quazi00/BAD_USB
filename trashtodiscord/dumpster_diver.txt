@@ -1,7 +1,0 @@
-GUI r
-STRING powershell
-ENTER
-STRING $webhook = "YOUR_WEBHOOK_HERE"
-ENTER
-STRING place holder
-ENTER
